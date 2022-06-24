@@ -57,6 +57,7 @@ where
     ) -> Result<()> {
         let f = File::open(&self.file_path).await?;
         let mut lines = BufReader::new(f).lines();
+        
         #[cfg(feature = "runtime-async-std")]
         while let Some(line) = lines.next().await {
             handler(line?, m)
