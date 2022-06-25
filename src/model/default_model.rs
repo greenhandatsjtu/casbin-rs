@@ -34,6 +34,7 @@ impl DefaultModel {
         let mut model = DefaultModel::default();
 
         model.load_section(&cfg, "r")?;
+        
         model.load_section(&cfg, "p")?;
         model.load_section(&cfg, "e")?;
         model.load_section(&cfg, "m")?;
